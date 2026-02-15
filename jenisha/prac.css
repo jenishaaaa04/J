@@ -1,0 +1,15 @@
+header{
+    font-style: normal;
+    font-size: 240%;
+    text-align: right;
+}
+.container{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: bold;
+    color: green;
+    text-indent: 2cm;
+}
+body{
+    background-image: url(a.png);
+    background-repeat: repeat-y;
+}

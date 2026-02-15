@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Megh 💙</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /*
+        ==========================================
+        ROMANTIC PREMIUM BLUE AESTHETIC - 2025/2026
+        ==========================================
+        Mood: Deeply romantic • Elegant • Calm • Intimate • Premium
+        
+        Main colors:
+        • Deep romantic blue:     #1e2a44  → #172038
+        • Dusty blue accent:      #5a7a9c  → #4a6a8c
+        • Soft sky blue highlight:#a3c9e8  → #8cb8e0
+        • Midnight/navy base:     #0f1c38
+        • Silver/champagne soft:  #e8e8f0  → #d8d8e8
+        • Very light warm-white:  #f5f6fa
+        
+        Goal: elegant depth, emotional warmth, premium romance
+        Avoids: neon, cold corporate, overly bright blues
+        ==========================================
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            /* Deep romantic blue gradient with soft warmth */
+            background: linear-gradient(135deg, #0f1c38 0%, #172038 50%, #1e2a44 100%);
+            color: #d8d8e8;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Password Screen - Elegant & Mysterious */
+        .password-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #172038 0%, #1e2a44 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .password-box {
+            background: rgba(30, 42, 68, 0.75);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            border: 1px solid rgba(163, 201, 232, 0.18);
+        }
+
+        .password-box h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2em;
+            color: #a3c9e8;
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+        }
+
+        .password-box input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #5a7a9c;
+            border-radius: 12px;
+            font-size: 1.1em;
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+            margin: 20px 0;
+            outline: none;
+            transition: all 0.3s ease;
+            background: rgba(15, 28, 56, 0.6);
+            color: #e8e8f0;
+        }
+
+        .password-box input:focus {
+            border-color: #8cb8e0;
+            box-shadow: 0 0 0 3px rgba(163, 201, 232, 0.15);
+            background: rgba(30, 42, 68, 0.85);
+        }
+
+        .unlock-btn {
+            background: linear-gradient(135deg, #5a7a9c 0%, #4a6a8c 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-family: 'Quicksand', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(90, 122, 156, 0.35);
+        }
+
+        .unlock-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(90, 122, 156, 0.45);
+            background: linear-gradient(135deg, #6a8aac 0%, #5a7a9c 100%);
+        }
+
+        .error-msg {
+            color: #a3c9e8;
+            margin-top: 15px;
+            font-size: 1em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sparkles → now silver-blue */
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #d8d8e8;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkleFloat 4.5s ease-in-out infinite;
+            opacity: 0.5;
+            box-shadow: 0 0 10px rgba(216, 216, 232, 0.5);
+        }
+
+        @keyframes sparkleFloat {
+            0%, 100% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0; }
+            50% { transform: translateY(-140px) scale(1.6) rotate(180deg); opacity: 0.7; }
+        }
+
+        .main-content {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(30, 42, 68, 0.85) 0%, rgba(15, 28, 56, 0.7) 100%);
+        }
+
+        .hero h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            color: #a3c9e8;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 20px rgba(163, 201, 232, 0.25);
+            animation: fadeInDown 1.3s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            color: #c0c0d8;
+            letter-spacing: 3px;
+            animation: fadeInUp 1.3s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp   { from { opacity: 0; transform: translateY(40px); }  to { opacity: 1; transform: translateY(0); } }
+
+        section {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8em;
+            color: #a3c9e8;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 1.5px;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            background: rgba(30, 42, 68, 0.55);
+            backdrop-filter: blur(8px);
+            padding: 50px 30px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(163, 201, 232, 0.15);
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .time-unit {
+            background: linear-gradient(135deg, rgba(90, 122, 156, 0.18), rgba(74, 106, 140, 0.12));
+            padding: 25px;
+            border-radius: 20px;
+            min-width: 100px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(163, 201, 232, 0.12);
+        }
+
+        .time-value {
+            font-size: 3em;
+            font-weight: 600;
+            color: #8cb8e0;
+            text-shadow: 0 2px 12px rgba(140, 184, 224, 0.3);
+            animation: gentlePulse 4s ease-in-out infinite;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50%      { transform: scale(1.04); }
+        }
+
+        .time-label {
+            font-size: 0.9em;
+            color: #b0b0d0;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .countdown-text {
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #c0c0d8;
+        }
+
+        /* Love Notes */
+        .moments {
+            background: rgba(30, 42, 68, 0.5);
+            backdrop-filter: blur(8px);
+            padding: 60px 40px;
+            border-radius: 24px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(163, 201, 232, 0.14);
+        }
+
+        .love-note {
+            background: linear-gradient(135deg, rgba(30, 42, 68, 0.65) 0%, rgba(15, 28, 56, 0.55) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(163, 201, 232, 0.13);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(20px) scale(0.96);
+            animation: floatIn 0.9s ease-out forwards;
+        }
+
+        .love-note:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 52px rgba(0, 0, 0, 0.55);
+            border-color: rgba(163, 201, 232, 0.3);
+        }
+
+        .love-note-heart {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+            color: #8cb8e0;
+            animation: heartBeat 2.4s ease-in-out infinite;
+        }
+
+        .love-note-accent {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.9em;
+            color: #d8d8e8;
+            opacity: 0.5;
+        }
+
+        /* Song Section - Romantic Blue */
+        .song-section {
+            background: rgba(30, 42, 68, 0.55);
+            backdrop-filter: blur(10px);
+            padding: 60px 40px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(163, 201, 232, 0.14);
+            position: relative;
+        }
+
+        .song-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(163,201,232,0.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(140,184,224,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .audio-player {
+            background: linear-gradient(135deg, rgba(90,122,156,0.22), rgba(74,106,140,0.16));
+            backdrop-filter: blur(8px);
+            padding: 45px 40px;
+            border-radius: 24px;
+            display: inline-block;
+            margin: 20px 0;
+            max-width: 550px;
+            width: 90%;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(163,201,232,0.16);
+        }
+
+        /* Changed: more romantic & cozy icon - headphones instead of music note */
+        .music-note-icon {
+            font-size: 3.2em;
+            color: #8cb8e0;
+            margin-bottom: 18px;
+            opacity: 0.85;
+            animation: gentleFloat 5s ease-in-out infinite;
+        }
+
+        .music-note-icon::before {
+            content: "🎧";  /* Headphones - more intimate & cozy feeling */
+        }
+
+        .song-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.4em;
+            color: #a3c9e8;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(163,201,232,0.25);
+        }
+
+        .artist-name {
+            color: #b0b0d0;
+            margin-bottom: 30px;
+            font-size: 1.15em;
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 25px;
+            padding: 25px;
+            background: rgba(15,28,56,0.45);
+            border-radius: 18px;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.4);
+        }
+
+        .play-pause-btn {
+            background: linear-gradient(135deg, #5a7a9c 0%, #4a6a8c 100%);
+            border: none;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.9em;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            box-shadow: 0 10px 28px rgba(90,122,156,0.4);
+        }
+
+        .play-pause-btn:hover {
+            transform: scale(1.12);
+            box-shadow: 0 14px 36px rgba(90,122,156,0.5);
+            background: linear-gradient(135deg, #6a8aac 0%, #5a7a9c 100%);
+        }
+
+        .volume-slider {
+            height: 6px;
+            background: rgba(163,201,232,0.18);
+        }
+
+        .love-notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            position: relative;
+        }
+
+        .volume-slider::-webkit-slider-thumb,
+        .volume-slider::-moz-range-thumb {
+            background: linear-gradient(135deg, #8cb8e0 0%, #a3c9e8 100%);
+            border: 2px solid #e8e8f0;
+        }
+
+        .song-info {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6em;
+            color: #c0c0d8;
+            margin-top: 35px;
+            opacity: 0.92;
+        }
+        .confetti {
+    position: fixed;
+    top: -10px;
+    width: 8px;
+    height: 14px;
+    opacity: 0.8;
+    animation: confettiFall linear forwards;
+    z-index: 9999;
+}
+
+@keyframes confettiFall {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+.surprise-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 28, 56, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 9998;
+}
+
+.surprise-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hug-message,
+.easter-message {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.hug-message.show,
+.easter-message.show {
+    opacity: 1;
+}
+
+
+        /* Surprise Section */
+        .surprise-section,
+        .surprise-overlay,
+        .surprise-content,
+        .hug-section,
+        .final-message {
+            background: rgba(30, 42, 68, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(163, 201, 232, 0.14);
+        }
+
+        .surprise-btn,
+        .close-surprise,
+        .hug-btn,
+        .love-btn {
+            background: linear-gradient(135deg, #5a7a9c 0%, #4a6a8c 100%);
+            box-shadow: 0 12px 32px rgba(90,122,156,0.35);
+        }
+
+        .surprise-btn:hover,
+        .close-surprise:hover,
+        .hug-btn:hover,
+        .love-btn:hover {
+            background: linear-gradient(135deg, #6a8aac 0%, #5a7a9c 100%);
+            box-shadow: 0 16px 44px rgba(90,122,156,0.45);
+        }
+
+        .love-btn {
+            background: linear-gradient(135deg, #8cb8e0 0%, #a3c9e8 100%);
+            box-shadow: 0 12px 36px rgba(140,184,224,0.4);
+        }
+
+        .love-btn:hover {
+            background: linear-gradient(135deg, #a3c9e8 0%, #b3d4f0 100%);
+        }
+
+        /* Floating hearts stay the same shape/color family - just adjusted tone */
+        .heart {
+            color: #8cb8e0;
+        }
+
+        /* Confetti - blue/silver tones */
+        .confetti {
+            background: #a3c9e8;
+        }
+
+        /* Easter egg & other small elements */
+        .easter-egg {
+            color: #a3c9e8;
+        }
+
+        /* Mobile adjustments remain the same */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8em; }
+            .hero p { font-size: 1.3em; }
+            .section-title { font-size: 2.2em; }
+            .time-unit { min-width: 80px; padding: 20px; }
+            .time-value { font-size: 2.2em; }
+            section { padding: 50px 15px; }
+            .love-notes-grid { grid-template-columns: 1fr; }
+            .audio-player { padding: 35px 25px; width: 95%; }
+            .play-pause-btn { width: 64px; height: 64px; font-size: 1.7em; }
+        }
+    </style>
+</head>
+<body>
+    <!-- The rest of your HTML + JavaScript remains 100% unchanged -->
+    <!-- Password Screen -->
+    <div class="password-screen" id="passwordScreen">
+        <div class="password-box">
+            <h2>This surprise is only for you, Megh ❤️</h2>
+            <input type="password" id="passwordInput" placeholder="Enter password">
+            <button class="unlock-btn" id="unlockBtn">Unlock</button>
+            <p class="error-msg" id="errorMsg">Hmm... try again my love 💕</p>
+        </div>
+    </div>
+
+    <!-- Main Content (unchanged) -->
+    <div class="main-content" id="mainContent">
+        <section class="hero">
+            <h1>Happy Birthday, Megh 💙</h1>
+            <p>Today is all about you.</p>
+        </section>
+
+        <section class="countdown">
+            <h2 class="section-title">Counting Every Moment</h2>
+            <div class="timer">
+                <div class="time-unit"><div class="time-value" id="days">0</div><div class="time-label">Days</div></div>
+                <div class="time-unit"><div class="time-value" id="hours">0</div><div class="time-label">Hours</div></div>
+                <div class="time-unit"><div class="time-value" id="minutes">0</div><div class="time-label">Minutes</div></div>
+                <div class="time-unit"><div class="time-value" id="seconds">0</div><div class="time-label">Seconds</div></div>
+            </div>
+            <p class="countdown-text">Counting every second until I celebrate you 💙</p>
+        </section>
+
+        <section class="moments">
+            <h2 class="section-title">What Makes You So Special</h2>
+            <div class="love-notes-grid">
+                <div class="love-note">
+                    <span class="love-note-accent">✨</span>
+                    <span class="love-note-heart">💙</span>
+                    <p class="love-note-text">Your presence turns ordinary moments into something I want to remember forever.</p>
+                </div>
+                <div class="love-note">
+                    <span class="love-note-accent">💫</span>
+                    <span class="love-note-heart">💙</span>
+                    <p class="love-note-text">The way you listen, really listen, makes me feel like I'm the only person in the world.</p>
+                </div>
+                <div class="love-note">
+                    <span class="love-note-accent">🌟</span>
+                    <span class="love-note-heart">💙</span>
+                    <p class="love-note-text">You have this quiet strength that makes everything feel possible, even on the hardest days.</p>
+                </div>
+                <div class="love-note">
+                    <span class="love-note-accent">🎈</span>
+                    <span class="love-note-heart">💙</span>
+                    <p class="love-note-text">Your smile isn't just beautiful — it's the thing that makes my heart forget how to work normally.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="song-section">
+            <h2 class="section-title">This Song Feels Like You, Megh 🎶</h2>
+            <div class="audio-player">
+                <div class="music-note-icon"></div>
+                <div class="song-name">Tu Hain Toh</div>
+                <div class="artist-name">by Neeti Mohan</div>
+                <div class="audio-controls">
+                    <button class="play-pause-btn" id="playPauseBtn">▶️</button>
+                    <div class="volume-control">
+                        <span class="volume-icon">🔊</span>
+                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                    </div>
+                </div>
+                <audio id="bgMusic" loop>
+                    <source src="Tu_Hain_Toh.mp3" type="audio/mpeg">
+                </audio>
+            
+            <p class="song-info">Every time I hear this song, it feels like you — calm, warm, and home.</p>
+        </section>
+
+
+    <!-- Emotional Surprise Section -->
+    <section class="surprise-section">
+        <h2 class="section-title">I Have Something for You</h2>
+        <button class="surprise-btn" id="surpriseBtn">Click for Your Surprise 🎁</button>
+    </section>
+
+    <!-- Surprise Overlay with Hearts & Image -->
+    <div class="surprise-overlay" id="surpriseOverlay">
+        <div class="surprise-content">
+            <div class="surprise-caption">For you, my love 💖</div>
+            <div class="floating-hearts">
+                <span class="heart">💖</span>
+                <span class="heart">💕</span>
+                <span class="heart">💗</span>
+                <span class="heart">💝</span>
+                <span class="heart">💘</span>
+            </div>
+            <div class="surprise-image-container">
+                <!-- Surprise image: img.jpeg -->
+                <img src="img.jpeg" 
+                     alt="Surprise for Megh" 
+                     class="surprise-image">
+            </div>
+            <button class="close-surprise" id="closeSurpriseBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Hug Section -->
+    <section class="hug-section">
+        <h2 class="section-title">A Hug, Just for You 🤗</h2>
+        <button class="hug-btn" id="hugBtn">Tap for a Hug</button>
+        <div class="hug-message" id="hugMessage">
+            <p>Imagine me hugging you really tight right now, Megh. No words. Just love.</p>
+        </div>
+    </section>
+
+    <!-- Final Message -->
+    <section class="final-message">
+        <p>Megh, you are my safe place, my happiness, and my heart. Thank you for being you. Happy Birthday, my love 💖</p>
+        <button class="love-btn" id="loveBtn">I Love You</button>
+    </section>
+</div>
+
+<!-- Easter Egg -->
+<div class="easter-egg" id="easterEgg">💜</div>
+<div class="easter-message" id="easterMessage">
+    <p>If you found this, it means you notice the little things — and that's one of the reasons I love you, Megh 💕</p>
+</div>
+    <script>
+    // ===========================================
+    // PASSWORD PROTECTION
+    // ===========================================
+    function checkPassword() {
+        var input = document.getElementById('passwordInput');
+        var password = input.value;
+        
+        if (password === 'megh' || password === 'Megh') {
+            document.getElementById('passwordScreen').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            createConfetti();
+        } else {
+            var errorMsg = document.getElementById('errorMsg');
+            errorMsg.style.opacity = '1';
+            input.value = '';
+            setTimeout(function() {
+                errorMsg.style.opacity = '0';
+            }, 2000);
+        }
+    }
+
+    document.getElementById('unlockBtn').addEventListener('click', checkPassword);
+    document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') checkPassword();
+    });
+
+    // ===========================================
+    // COUNTDOWN TIMER
+    // ===========================================
+    function updateCountdown() {
+        var birthday = new Date('2026-02-25T00:00:00');
+        var now = new Date();
+        var diff = birthday - now;
+
+        if (diff > 0) {
+            var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        } else {
+            document.getElementById('days').textContent = '0';
+            document.getElementById('hours').textContent = '0';
+            document.getElementById('minutes').textContent = '0';
+            document.getElementById('seconds').textContent = '0';
+        }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // ===========================================
+    // AUDIO PLAYER
+    // ===========================================
+    var isPlaying = false;
+    var music = document.getElementById('bgMusic');
+    var playPauseBtn = document.getElementById('playPauseBtn');
+    var volumeSlider = document.getElementById('volumeSlider');
+
+    playPauseBtn.addEventListener('click', function() {
+        if (isPlaying) {
+            music.pause();
+            playPauseBtn.textContent = '▶️';
+            isPlaying = false;
+        } else {
+            music.play().catch(function(err) {
+                console.log('Play error:', err);
+            });
+            playPauseBtn.textContent = '⏸️';
+            isPlaying = true;
+        }
+    });
+
+    volumeSlider.addEventListener('input', function() {
+        music.volume = this.value / 100;
+    });
+
+    music.volume = 0.7;
+
+    // ===========================================
+    // SURPRISE SECTION
+    // ===========================================
+    document.getElementById('surpriseBtn').addEventListener('click', function() {
+        document.getElementById('surpriseOverlay').classList.add('show');
+        createConfetti();
+    });
+
+    document.getElementById('closeSurpriseBtn').addEventListener('click', function() {
+        document.getElementById('surpriseOverlay').classList.remove('show');
+    });
+
+    document.getElementById('surpriseOverlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.remove('show');
+        }
+    });
+
+    document.querySelector('.surprise-content').addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+
+    // ===========================================
+    // HUG SECTION
+    // ===========================================
+    document.getElementById('hugBtn').addEventListener('click', function() {
+        document.getElementById('hugMessage').classList.add('show');
+    });
+
+    // ===========================================
+    // EASTER EGG
+    // ===========================================
+    document.getElementById('easterEgg').addEventListener('click', function() {
+        var easterMsg = document.getElementById('easterMessage');
+        easterMsg.classList.add('show');
+        setTimeout(function() {
+            easterMsg.classList.remove('show');
+        }, 4000);
+    });
+
+    // ===========================================
+    // LOVE BUTTON
+    // ===========================================
+    document.getElementById('loveBtn').addEventListener('click', function() {
+        createConfetti();
+        alert('I love you too, forever and always 💖');
+    });
+
+    // ===========================================
+    // SPARKLES
+    // ===========================================
+    function createSparkles() {
+        for (var i = 0; i < 25; i++) {
+            setTimeout(function() {
+                var sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 4 + 's';
+                document.body.appendChild(sparkle);
+            }, i * 120);
+        }
+    }
+
+    createSparkles();
+
+    // ===========================================
+    // JOYFUL CONFETTI
+    // ===========================================
+    function createConfetti() {
+        var colors = ['#e8a4a0', '#f5b4a8', '#f5d89a', '#a8c5a8', '#f0a89c'];
+        for (var i = 0; i < 50; i++) {
+            setTimeout(function() {
+                var confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.animationDuration = (Math.random() * 3 + 2.5) + 's';
+                document.body.appendChild(confetti);
+                setTimeout(function() {
+                    confetti.remove();
+                }, 6000);
+            }, i * 50);
+        }
+    }
+      
+        </script>
+</body>
+</html>
